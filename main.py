@@ -1,11 +1,10 @@
-def new_game():
-    pass
+import sqlite3
 
-def check_answer():
-    pass
+connection = sqlite3.connect('db')
+cursor = connection.cursor()
+cursor.execute('SELECT * FROM level_1')
+print(cursor.fetchall())
 
-def display_score():
-    pass
-
-def play_again():
-    pass
+connection.commit()
+cursor.close()
+connection.close()
